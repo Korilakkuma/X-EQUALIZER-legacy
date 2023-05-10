@@ -1,7 +1,7 @@
 {
   "name": "X EQUALIZER",
   "version": "0.0.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "Chrome extension and Firefox addon for Graphic Equalizer",
   "icons" : {
     "128": "images/icon-128.png",
@@ -15,8 +15,7 @@
     "default_title": "X EQUALIZER"
   },
   "background": {
-    "scripts": [],
-    "persistent": false
+    "script": "./dist/chrome.js"
   },
   "content_scripts": [
     {
@@ -24,7 +23,7 @@
         "https://*/*"
       ],
       "css": [],
-      "js": ["./dist/chrome.js"]
+      "js": []
     }
   ],
   "permissions": [
