@@ -7,7 +7,7 @@
     "128": "images/icon-128.png",
     "256": "images/icon-256.png"
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
