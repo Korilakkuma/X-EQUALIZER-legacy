@@ -15,11 +15,14 @@ export const scriptContainer = () => {
 
         const visualizerCanvasId = 'visualizer-canvas';
         const controllerCanvasId = 'controller-canvas';
-        const selectPresetId     = 'select-preset';
 
         const visualizerCanvas = document.createElement('canvas');
         const controllerCanvas = document.createElement('canvas');
-        const select           = document.createElement('select');
+        const select           = document.getElementById('select-preset');
+
+        if (!(select instanceof HTMLSelectElement)) {
+          return;
+        }
 
         const context = controllerCanvas.getContext('2d');
 
@@ -29,24 +32,7 @@ export const scriptContainer = () => {
 
         const knob = new Knob(controllerCanvas, context);
 
-        /*
-        if (visualizerCanvas && controllerCanvas && select) {
-            if (visualizerCanvas.getAttribute('hidden') && controllerCanvas.getAttribute('hidden') && select.getAttribute('hidden')) {
-                visualizerCanvas.removeAttribute('hidden');
-                controllerCanvas.removeAttribute('hidden');
-                select.removeAttribute('hidden');
-            } else {
-                visualizerCanvas.setAttribute('hidden', 'hidden');
-                controllerCanvas.setAttribute('hidden', 'hidden');
-                select.setAttribute('hidden', 'hidden');
-            }
-
-            return;
-        }
-        */
-
         const equalizer = new GraphicEqualizer(X.get());
-
 
         X('media')
           .setup({
@@ -299,39 +285,12 @@ export const scriptContainer = () => {
 
         window.addEventListener('resize', onResize, false);
 
-        select.setAttribute('id', selectPresetId);
-
-        const fragment = document.createDocumentFragment();
-
-        PRESETS.forEach((preset) => {
-          const option = document.createElement('option');
-
-          option.value       = Object.keys(preset)[0];
-          option.textContent = Object.keys(preset)[0].toUpperCase();
-
-          fragment.appendChild(option);
-        });
-
-        select.appendChild(fragment);
-
-        document.body.appendChild(select);
-
-        const onChangePreset = (event: Event) => {
-          if (!(event.currentTarget instanceof HTMLSelectElement)) {
-            return;
-          }
-
-          const preset       = PRESETS[event.currentTarget.selectedIndex];
-          const presetName   = Object.values(preset)[0];
-
-          if (typeof presetName !== 'string') {
-            return;
-          }
-
-          const presetValues = preset[presetName] ?? [];
+        const onChangePreset = () => {
+          const presetName = select.value;
+          const presetValues = PRESETS[presetName] ?? [];
 
           for (let i = 0, len = presetValues.length; i < len; i++) {
-            equalizer.param(FREQUENCIES[i], presetValues[i] * 1.5);
+            equalizer.param(FREQUENCIES[i], presetValues[i]);
 
             const maxdB = 18;
             const y     = (0 - ((presetValues[i] / maxdB) * middle)) + middle;
@@ -358,11 +317,6 @@ export const scriptContainer = () => {
               default:
                 break;
             }
-
-            const mouseEvent = document.createEvent('Event');
-
-            mouseEvent.initEvent('mousemove', true, true);
-            controllerCanvas.dispatchEvent(mouseEvent);
           }
         };
 
