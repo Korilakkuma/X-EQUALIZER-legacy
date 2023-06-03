@@ -5,23 +5,23 @@ export type Preset = { [presetName: string]: number[] };
 
 export const FREQUENCIES: CenterFrequency[] = [125, 250, 500, 1000, 2000, 4000, 8000];
 
-export const PRESETS: Preset[] = [
-  { flat          : [0, 0, 0, 0, 0, 0] },
-  { perfect       : [9, 7, 6, 5, 7, 9] },
-  { explosion     : [9, 7, 6, 5, 7, 4] },
-  { acoustic      : [5, 1, 2, 3, 4, 2] },
-  { bassbooster   : [3, 2, 1, 0, 0, 0] },
-  { bassreducer   : [-4, -3, -1, 0, 0, 0] },
-  { deep          : [2, 1, 3, 2, 1, -2] },
-  { hiphop        : [2, 3, -2, -2, 2, -1] },
-  { latin         : [0, 0, -2, -2, -2, 0] },
-  { loudness      : [0, 0, -2, 0, -1, -5] },
-  { lounge        : [-1, -2, 4, 2, 0, -2] },
-  { piano         : [0, 2, 3, 1, 3, 4] },
-  { rb            : [6, 2, -3, -2, 2, 3] },
-  { treblebooster : [0, 0, 0, 1, 3, 4] },
-  { trablereducer : [0, 0, 0, -2, -3, -4] }
-];
+export const PRESETS: Preset = {
+  flat         : [0, 0, 0, 0, 0, 0],
+  perfect      : [9, 7, 6, 5, 7, 9],
+  explosion    : [9, 7, 6, 5, 7, 4],
+  acoustic     : [5, 1, 2, 3, 4, 2],
+  bassbooster  : [3, 2, 1, 0, 0, 0],
+  bassreducer  : [-4, -3, -1, 0, 0, 0],
+  deep         : [2, 1, 3, 2, 1, -2],
+  hiphop       : [2, 3, -2, -2, 2, -1],
+  latin        : [0, 0, -2, -2, -2, 0],
+  loudness     : [0, 0, -2, 0, -1, -5],
+  lounge       : [-1, -2, 4, 2, 0, -2],
+  piano        : [0, 2, 3, 1, 3, 4],
+  rb           : [6, 2, -3, -2, 2, 3],
+  treblebooster: [0, 0, 0, 1, 3, 4],
+  treblereducer: [0, 0, 0, -2, -3, -4]
+};
 
 type GraphicEqualizerParams = {
    125?: number,
