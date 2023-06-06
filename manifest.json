@@ -15,6 +15,10 @@
     "default_title": "X EQUALIZER",
     "default_popup": "popup.html"
   },
+  "permissions": ["scripting", "activeTab", "tabs"],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
   "background": {
     "script": "./dist/chrome.js"
   },
@@ -26,8 +30,5 @@
       "css": [],
       "js": []
     }
-  ],
-  "permissions": [
-    "tabs", "https://*/*"
   ]
 }
