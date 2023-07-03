@@ -13,7 +13,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": false,
     "outDir": "./dist/",
-    "paths": { "@/*": ["src/*"] },
+    "paths": {
+      "/src/*": ["./src/*"]
+    },
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
