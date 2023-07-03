@@ -1,4 +1,4 @@
-import { Knob } from './';
+import { Knob } from '/src/Knob';
 
 const mockCanvas = (canvas: HTMLCanvasElement) => {
   Object.defineProperty(canvas, 'getContext', {

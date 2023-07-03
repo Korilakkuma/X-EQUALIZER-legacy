@@ -1,7 +1,7 @@
 'use strict';
 
-import { scriptContainer } from './main';
-import { extractScriptAsString, deleteNamespace } from './utils';
+import { scriptContainer } from '/src/main';
+import { extractScriptAsString, deleteNamespace } from '/src/utils';
 
 browser.browserAction.onClicked.addListener((_tab: browser.tabs.Tab) => {
   browser.tabs.executeScript({

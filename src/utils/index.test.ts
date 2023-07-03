@@ -1,4 +1,4 @@
-import { extractScriptAsString, deleteNamespace } from './';
+import { extractScriptAsString, deleteNamespace } from '/src/utils';
 
 const scriptAsString = `
   let x = 0;

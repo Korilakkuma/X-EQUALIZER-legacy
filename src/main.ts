@@ -1,6 +1,6 @@
-import './types';
-import { GraphicEqualizer, FREQUENCIES, PRESETS } from './GraphicEqualizer';
-import { Knob } from './Knob';
+import '/src/types';
+import { GraphicEqualizer, FREQUENCIES, PRESETS } from '/src/GraphicEqualizer';
+import { Knob } from '/src/Knob';
 
 export const scriptContainer = () => {
   function main() {
