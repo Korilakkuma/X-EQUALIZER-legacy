@@ -15,7 +15,9 @@ $ npm run build
 
 ## 2. Install to Google Chrome
 
-WIP
+1. Type `chrome://extensions/` to URL bar
+1. Check `Developer mode` and Click `Load unpacked`
+1. Choose `X-EQUALIZER` directory
 
 ## 3. Install to Mozilla Firefox
 
