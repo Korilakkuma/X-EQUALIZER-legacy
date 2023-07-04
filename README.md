@@ -10,6 +10,7 @@ This uses Web Audio API Library ([XSound](https://github.com/Korilakkuma/XSound)
 $ git clone git@github.com:Korilakkuma/X-EQUALIZER.git
 $ cd X-EQUALIZER
 $ npm install
+$ npm run build
 ```
 
 ## 2. Install to Google Chrome
