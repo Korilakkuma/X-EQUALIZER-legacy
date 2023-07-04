@@ -21,5 +21,6 @@ $ npm run build
 
 ## 3. Install to Mozilla Firefox
 
-WIP
-
+1. Type `about:debugging#/runtime/this-firefox` to URL bar
+1. Click `Load Temporary Add-on`
+1. Choose `X-EQUALIZER` directory
