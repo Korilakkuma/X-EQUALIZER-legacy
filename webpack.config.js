@@ -1,5 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const path                 = require('path');
+/* eslint-enable @typescript-eslint/no-var-requires */
+
+const dirname = path.resolve('.');
 
 module.exports = {
   mode: 'development',
@@ -11,7 +15,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: `${__dirname}/dist`,
+    path: `${dirname}/dist`,
     publicPath: '/dist/',
     library: {
       type: 'window'
