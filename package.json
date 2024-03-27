@@ -2,7 +2,7 @@
   "name": "x-equalizer",
   "version": "0.0.0",
   "engines": {
-    "node": ">=16.0.0 <=18.16.x"
+    "node": ">=18.0.0 <=20.12.x"
   },
   "description": "Chrome extension and Firefox addon for Graphic Equalizer",
   "scripts": {
